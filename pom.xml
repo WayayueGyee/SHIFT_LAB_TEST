@@ -14,7 +14,7 @@
     <name>CFT_test</name>
     <description>CFT_test</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -71,7 +71,7 @@
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>snapshots-repo</id>
+            <id>package-repo</id>
             <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
