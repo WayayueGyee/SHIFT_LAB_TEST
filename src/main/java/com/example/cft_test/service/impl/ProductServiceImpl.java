@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> readByCategory(String category) throws NotFoundException {
-        return productRepository.findByCategory(category).orElseThrow(NotFoundException::new);
+        return productRepository.findAllByCategory(category).orElseThrow(NotFoundException::new);
     }
 
     @Override

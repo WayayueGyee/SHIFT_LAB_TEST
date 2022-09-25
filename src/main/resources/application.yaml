@@ -1,1 +1,8 @@
-
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+  port: 1111
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

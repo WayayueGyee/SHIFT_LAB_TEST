@@ -1,6 +1,7 @@
 package com.example.cft_test.model;
 
 import com.redis.om.spring.annotations.Document;
+import com.redis.om.spring.annotations.Searchable;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
@@ -10,16 +11,6 @@ import org.springframework.lang.NonNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Map;
-
-// Product struct
-/*
-{
-    id: int,
-    serialNumber: String,
-    manufacturer: String,
-    category: String,
-}
-*/
 
 @RedisHash("Product")
 @Document
@@ -38,6 +29,7 @@ public class Product implements Serializable {
     @Indexed
     private String sku;
     @Indexed
+    @Searchable
     private String category;
     @Indexed
     private Map<String, String> chars;
@@ -104,7 +96,7 @@ public class Product implements Serializable {
     }
 
     public void setCategory(String category) {
-        this.category = category;
+        this.category = category.toLowerCase();
     }
 
     public Map<String, String> getChars() {

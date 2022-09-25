@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends RedisDocumentRepository<Product, String> {
-    Optional<List<Product>> findByCategory(String category);
+    Optional<List<Product>> findAllByCategory(String category);
 }
