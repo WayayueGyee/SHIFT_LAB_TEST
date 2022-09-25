@@ -1,6 +1,5 @@
 package com.example.cft_test.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.redis.om.spring.annotations.Document;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.Id;
@@ -10,9 +9,7 @@ import org.springframework.lang.NonNull;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 // Product struct
 /*
@@ -42,8 +39,8 @@ public class Product implements Serializable {
     private String sku;
     @Indexed
     private String category;
-//    @Indexed
-//    private Map<String, String> chars;
+    @Indexed
+    private Map<String, String> chars;
 
     public Product() {
     }
@@ -110,13 +107,13 @@ public class Product implements Serializable {
         this.category = category;
     }
 
-//    public Map<String, String> getChars() {
-//        return chars;
-//    }
-//
-//    public void setChars(Map<String, String> chars) {
-//        this.chars = chars;
-//    }
+    public Map<String, String> getChars() {
+        return chars;
+    }
+
+    public void setChars(Map<String, String> chars) {
+        this.chars = chars;
+    }
 
     @Override
     public String toString() {
@@ -128,7 +125,7 @@ public class Product implements Serializable {
                 ", quantity=" + quantity +
                 ", sku='" + sku + '\'' +
                 ", category='" + category + '\'' +
-//                ", chars='" + chars + '\'' +
+                ", chars='" + chars + '\'' +
                 '}';
     }
 }

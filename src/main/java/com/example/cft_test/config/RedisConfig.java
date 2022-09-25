@@ -15,8 +15,9 @@ public class RedisConfig {
     public JedisConnectionFactory connectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
         configuration.setHostName("localhost");
-        configuration.setPort(6379);
-        configuration.setPassword("8n+QI13vneDUa96Adzc29foUOynNfB26B9lHSUDZ5dn8o4PXWlNkojf30tHOW96tEIknBhOyQw==");
+        configuration.setPort(6000);
+//        configuration.setPassword("8n+QI13vneDUa96Adzc29foUOynNfB26B9lHSUDZ5dn8o4PXWlNkojf30tHOW96tEIknBhOyQw==");
+        configuration.setPassword("");
 
         return new JedisConnectionFactory(configuration);
     }
